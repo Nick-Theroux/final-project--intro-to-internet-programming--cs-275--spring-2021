@@ -10,21 +10,24 @@ window.onload = () => {
         let right = 0
         
         function generate(size){
-            let text = "" 
+            let text = ""
+            let space = ""
+            for(let x=0; x<size; x++)
+                space = space + " "
             if (size %2==0){
                 for (let i=0; i<size; i++){
-                    for (let j=0; j<=i; j++){
-                        text += "* "
+                    for (let j=0; j<i; j++){
+                        text += "*" + space
                     }
-                    text = text + "\n"
+                    text = text + "<br>"
                     object.innerHTML = text
                     object.style.textAlign = "center"
                 }
                 for (let i=size; i>=0; i--){
-                    for (let j=0; j<=i; j++){
-                        text += "* "
+                    for (let j=0; j<i; j++){
+                        text += "*" + space
                     }
-                    text = text + "\n"
+                    text = text + "<br>"
                     object.innerHTML = text
                     object.style.textAlign = "center"
                 }
@@ -32,17 +35,17 @@ window.onload = () => {
             else{
                 for (let i=0; i<size; i++){
                     for (let j=0; j<=i; j++){
-                        text += "*"
+                            text += "*" + space
                     }
-                    text = text + "\n"
+                    text = text + "<br>"
                     object.innerHTML = text
                     object.style.textAlign = "center"
                 }
                 for (let i=size; i>=0; i--){
                     for (let j=0; j<=i; j++){
-                        text += "*"
+                        text += "*" + space
                     }
-                    text = text + "\n"
+                    text = text + "<br>"
                     object.innerHTML = text
                     object.style.textAlign = "center"
                 }
@@ -63,6 +66,6 @@ window.onload = () => {
         }
         
         generate(size)
-        setInterval(moveDiamond, 5)
+        //setInterval(moveDiamond, 5)
 
 };
