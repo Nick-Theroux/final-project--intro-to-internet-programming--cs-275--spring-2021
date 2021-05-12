@@ -3,7 +3,7 @@ window.onload = () => {
         `background-color: yellow; font-weight: bold;`);
         
         let size = window.prompt("Enter the size of the diamond: ")
-        
+
         let object = document.querySelector('div')
         
         let left = 0
@@ -64,8 +64,8 @@ window.onload = () => {
                     right = 0
             }
         }
-        
+        while (isNaN(size))
+            size = window.prompt("Enter the size of the diamond: ")
         generate(size)
-        //setInterval(moveDiamond, 5)
-
+        setInterval(moveDiamond, 5)
 };
